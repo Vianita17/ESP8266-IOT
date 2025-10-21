@@ -1,0 +1,156 @@
+/* Definición de variables CSS */
+            :root {
+              --primary-color: #fff;
+              --cursor: pointer;
+            }
+
+            * {
+              margin: 0;
+              padding: 0;
+              box-sizing: border-box;
+            }
+
+            body {
+              font-family: Verdana, Geneva, Tahoma, sans-serif;
+              background-color: #EEF0F7;
+              display: grid;
+              place-items: center;
+              min-height: 100vh;
+              overflow: hidden;
+            }
+
+            .container {
+            max-width: 90%; /* Ocupar hasta el 90% del ancho de la pantalla */
+            margin: 20px auto; /* Centrar el contenedor horizontalmente */
+            padding: 20px; /* Espaciado interno */
+            background-color: #f9f9f9; /* Fondo claro */
+            border-radius: 8px; /* Bordes redondeados */
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Sombra suave */
+            transition: transform 0.3s ease; /* Animación suave al crecer */
+          }
+          
+          .container:hover {
+            transform: scale(1.05); /* Hacer que el contenedor crezca al pasar el cursor */
+          }
+
+            .container::after {
+              content: '';
+              position: absolute;
+              background-image: linear-gradient(to bottom right, #FF9EC4, #FFD07E);
+              width: 900px;
+              height: 900px;
+              border-radius: 50%;
+              z-index: -1;
+            }
+
+            .container-close {
+              position: absolute;
+              top: -15px;
+              right: -15px;
+              background-color: var(--primary-color);
+              width: 45px;
+              height: 45px;
+              display: grid;
+              place-items: center;
+              font-size: 1.7rem;
+              color: #2E4052;
+              border-radius: 50%;
+              box-shadow: 0 10px 20px rgba(0, 0, 0, 0.164);
+              cursor: var(--cursor);
+              display: none;
+            }
+
+            .container img {
+              width: 250px;
+              height: 400px;
+              object-fit: cover;
+              object-position: center;
+            }
+
+            .container-text {
+              padding: 10px 40px 10px 10px;
+            }
+
+            .container-text h2 {
+              font-size: 1.2rem;
+              color: #1A2250;
+            }
+
+            .container-text p {
+              font-size: 14px;
+              color: #3B4169;
+              margin: 10px 0;
+            }
+
+            .container-text input,
+            .container-text form {
+              width: 100%;
+              border: none;
+              padding: 14px;
+              border-radius: 3px;
+            }
+
+            .container-text input {
+              border: 2px solid #DADDEC;
+              margin: 5px 0 10px;
+              font-size: 1rem;
+              color: #656880;
+            }
+
+            .container-text form {
+              background-image: linear-gradient(to right, #89CAFF, #6589FF);
+              display: block;
+              color: var(--primary-color);
+              font-size: 1rem;
+              cursor: var(--cursor);
+              box-shadow: 0 5px 20px #89caff94;
+              transition: box-shadow 0.3s ease-in-out;
+            }
+
+            .container-text form:hover {
+              box-shadow: none;
+            }
+
+            .container-text span {
+              display: block;
+              text-align: center;
+              margin: 20px 0 0;
+              color: #BABDCB;
+              font-size: 12px;
+            }
+              /* Responsividad */
+              @media (max-width: 768px) {
+                .container {
+                  padding: 10px; /* Reducir el espacio en dispositivos pequeños */
+                }
+              
+                h1 {
+                  font-size: 1.5rem; /* Ajustar tamaño de texto */
+                }
+              
+                p {
+                  font-size: 0.9rem;
+                }
+              
+                .container-close {
+                  width: 35px;
+                  height: 35px;
+                  top: -10px; /* Ajustar posición */
+                  right: -10px;
+                }
+              }
+              
+              @media (max-width: 480px) {
+                .container {
+                  max-width: 100%; /* Usar todo el ancho disponible */
+                  padding: 5px;
+                }
+              
+                h1 {
+                  font-size: 1.2rem; /* Texto más pequeño en pantallas muy estrechas */
+                }
+              
+                p {
+                  font-size: 0.8rem;
+                }
+              }
